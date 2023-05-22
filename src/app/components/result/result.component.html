@@ -1,0 +1,41 @@
+<div class="d-flex team-vs m-4">
+  <span class="score">
+    <span [ngStyle]="{'color':scoreColor(matchResult.scoreOne,matchResult.scoreTwo)}">{{matchResult.scoreOne}}</span>
+    -
+    <span [ngStyle]="{'color':scoreColor(matchResult.scoreTwo,matchResult.scoreOne)}">{{matchResult.scoreTwo}}</span>
+  </span>
+  <div class="team-1 w-50">
+    <div class="team-details w-100 text-center">
+      <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+      <h3>{{matchResult.teamOne}}</h3>
+      <!-- [ngClass]="{
+            'win':,
+            'loss':,
+            'draw':
+        }" -->
+      <div *ngFor="let res of matchResult.comments">
+        <p>{{res.comment}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="team-2 w-50">
+    <div class="team-details w-100 text-center">
+      <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+      <h3>{{matchResult.teamTwo}} </h3>
+
+    </div>
+  </div>
+
+</div>
+
+<form #matchForm="ngForm" (ngSubmit)="addComment()">
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="comment.comment" name="comment" placeholder="Your comment....">
+  </div>
+
+
+
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary py-3 px-5" value="Add Comment">
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Store Name</th>
+            <th scope="col">Adress</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let store of storesTab">
+
+            <td>{{store.id}}</td>
+            <td>{{store.name}}</td>
+            <td>{{store.adress}}</td>
+
+            <td>
+                <button class="btn btn-warning" (click)="goToEdit(store.id)">Edit</button>
+
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

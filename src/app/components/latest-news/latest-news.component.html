@@ -1,0 +1,18 @@
+<div class="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title-section">
+                <h2 class="heading"></h2>
+                <h1></h1>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-4" *ngFor="let info of infoTab">
+                <app-info [infoInput]="info"></app-info>
+                
+            </div>
+         
+        </div>
+
+    </div>
+</div>
