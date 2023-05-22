@@ -310,6 +310,8 @@ app.post("/users/signup", multer({ storage: storageConfig }).single('img'), (req
         //     imgPath = null;
         // }
 
+        // nrmlment mrigl
+
         let user = new User({
 
             firstName: req.body.firstName,
